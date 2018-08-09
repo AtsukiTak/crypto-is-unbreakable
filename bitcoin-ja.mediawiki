@@ -265,22 +265,22 @@ p>qという仮定の下では、攻撃者が追いつく必要のあるブロ�
 
 Cのコードにすると、
 
-```c
+  ```c
 #include <math.h>
 double AttackerSuccessProbability(double q, int z)
 {
-double p = 1.0 - q;
-double lambda = z * (q / p);
-double sum = 1.0;
-int i, k;
-for (k = 0; k <= z; k++)
-{
-  double poisson = exp(-lambda);
-  for (i = 1; i <= k; i++)
-    poisson *= lambda / i;
-  sum -= poisson * (1 - pow(q / p, z - k));
-}
-return sum;
+  double p = 1.0 - q;
+  double lambda = z * (q / p);
+  double sum = 1.0;
+  int i, k;
+  for (k = 0; k <= z; k++)
+  {
+    double poisson = exp(-lambda);
+    for (i = 1; i <= k; i++)
+      poisson *= lambda / i;
+    sum -= poisson * (1 - pow(q / p, z - k));
+  }
+  return sum;
 }
 ```
 
@@ -314,12 +314,19 @@ P < 0.001 q=0.10 z=5 q=0.15 z=8 q=0.20 z=11 q=0.25 z=15 q=0.30 z=24 q=0.35 z=41 
 
 
 ==参照==
-[1] W. Dai, "b-money," http://www.weidai.com/bmoney.txt, 1998.  
+[1] W. Dai, "b-money," http://www.weidai.com/bmoney.txt, 1998. 
+
 [2] H. Massias, X.S. Avila, and J.-J. Quisquater, "Design of a secure timestamping service with minimal trust requirements," In *20th Symposium on Information Theory in the Benelux*, May 1999.  
+
 [3] S. Haber, W.S. Stornetta, "How to time-stamp a digital document," In *Journal of Cryptology*, vol 3, no 2, pages 99-111, 1991.  
-[4] D. Bayer, S. Haber, W.S. Stornetta, "Improving the efficiency and reliability of digital time-stamping," In *Sequences II: Methods in Communication, Security and Computer Science*, pages 329-334, 1993.  
+
+[4] D. Bayer, S. Haber, W.S. Stornetta, "Improving the efficiency and reliability of digital time-stamping," In *Sequences II: Methods in Communication, Security and Computer Science*, pages 329-334, 1993. 
+
 [5] S. Haber, W.S. Stornetta, "Secure names for bit-strings," In *Proceedings of the 4th ACM Conference on Computer and Communications Security*, pages 28-35, April 1997.  
+
 [6] A. Back, "Hashcash - a denial of service counter-measure,"  
 http://www.hashcash.org/papers/hashcash.pdf, 2002.  
+
 [7] R.C. Merkle, "Protocols for public key cryptosystems," In *Proc. 1980 Symposium on Security and Privacy*, IEEE Computer Society, pages 122-133, April 1980.  
+
 [8] W. Feller, "An introduction to probability theory and its applications," 1957.
