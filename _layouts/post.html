@@ -1,3 +1,31 @@
-<div class="container">
-{{ content }}
-</div>
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+
+    <!-- Non social metatags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#157878">
+
+    <title>{{ page_title }}</title>
+
+    <link rel="shortcut icon" href="{{ site.url }}/assets/img/favicon.ico">
+    <meta name="robots" content="noarchive">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/style.css">
+
+  </head>
+
+  <body>
+    <div id="post-page-header">
+      <h1>暗号通貨は砕けない</h1>
+    </div>
+    
+    <div id="post-content">
+      {{ content }}
+    </div>
+    
+  </body>
+</html>
